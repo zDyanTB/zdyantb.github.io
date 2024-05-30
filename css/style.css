@@ -1,0 +1,131 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css";
+/* Define the keyframes for the jump animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); /* Start and end position: no translation */ }
+  50% { transform: translateY(-20px); /* Middle position: translate downwards */ }
+}
+
+/* Profile header ---------------------------------------- */
+.gradient-background {
+  background: linear-gradient(135deg, #000, #333);
+  position: relative;
+}
+
+.fa-sort-down {
+  animation: float 3s infinite ease-in-out;
+}
+
+.profile-img-overlay, .profile-svg-overlay { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .1;
+}
+
+.profile-svg-overlay {
+  opacity: .5;
+}
+
+/* Scrollbar --------------------------------------------- */
+::-webkit-scrollbar {
+  width: 0.3rem; /* Width of the scrollbar */
+  margin: 5px;
+}
+
+body::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
+  background: transparent; /* Track color */
+}
+
+body::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+  background: #ccc; /* Thumb color */
+  border-radius: 4px; /* Rounded corners */
+
+}
+
+body::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:hover {
+  background: #fff; /* Thumb color on hover */
+}
+
+/* For Firefox */
+/* Set the width of the scrollbar */
+body {
+  scrollbar-width: thin; /* 'thin', 'auto', or 'none' */
+}
+
+/* Navbar -------------------------------------------------- */
+.navbar,
+.navbar-dropdown {
+  transition: all 0.5s ease-out;
+}
+
+.navbar-menu,
+.navbar-dropdown .navbar-item:not(.is-active, .is-selected) {
+  background-color: inherit !important;
+}
+
+/* Disable border on firefox */
+.maxfocus-highlighted {
+  box-shadow: none !important;
+}
+
+/* @media screen and (max-width: 1024px) { */
+/*   .navbar-menu .has-indicator { */
+/*     display: inline-block; */
+/*   } */
+/* } */
+
+/* Frost Glass -------------------------------------------- */
+@media (min-width: 1024px) {
+  .is-glass {
+    /* Trick to trigger gpu */
+    transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+
+    background-color: rgba(0,0,0,.2) !important;
+    backdrop-filter: saturate(150%) blur(10px); /* Adjust the blur intensity */
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.4); /* Soft shadow */
+  }
+}
+
+/* Indicator on hover ------------------------------------------  */
+.has-indicator::before {
+  background-color: white;
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  height: 4px;
+  width: 40%;
+  border-radius: 6px;
+  opacity: 0;
+  transform: translate(-50%, 100%); 
+  transition: all .2s 0.1s ease-in-out;
+}
+
+.has-indicator:hover::before {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media screen and (max-width: 1024px) {
+  .has-indicator::before {
+    display: none; /* Disable on small screens */
+  }
+}
+
+/* Image ------------------------------------------------------------- */
+.img {
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+.img:hover {
+  transform: scale(0.95);
+  border: 1px solid #07f;
+  box-shadow: #000 0px 0px 25px 2px;
+}
