@@ -102,7 +102,7 @@ async function fetchRepo(repoName, bannerPath) {
     const titleDiv = repoClone.querySelector('.repo-title');
     const descriptionDiv = repoClone.querySelector('.repo-desc');
     const starCountDiv = repoClone.querySelector('.star-count');
-    const imgElement = repoClone.querySelector('.img');
+    const imgElement = repoClone.querySelector('.repo-img');
     const repoLink = repoClone.querySelector('.repo-link');
 
     if (!descriptionDiv || !starCountDiv || !imgElement || !repoLink) {

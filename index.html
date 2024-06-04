@@ -141,29 +141,35 @@
       </div>
 
       <!-- Content -->
-      <div class="container-is-fullhd" id="repo-container"> </div>
+      <div class="container is-fullhd" id="repo-container"> </div>
 
       <!-- Template, by js -->
       <template id="repo-template">
-        <a class="repo-link " href="" style="height: 50% !important;">
 
-          <div class="columns is-multiline section is-medium">
+        <div class="columns is-multiline section is-medium">
 
-            <div class="column is-four-fifths">
-              <img class="img has-radius-large" src="" alt="Repository image" />
+          <a class="repo-link is-relative" href="">
+            <div class="column">
+              <img class="repo-img has-radius-large" src="" alt="Repository image" />
             </div>
 
-            <div class="column px-2 has-text-left has-radius-large">
-              <span class="title repo-title"> </span>
-              <div class="subtitle py-2">
-                <span class="has-text-info icon"> <i class="fa-solid fa-star"></i> </span>
-                <span class="has-text-info star-count"></span>
-              </div>
+            <span class="icon repo-icon has-text-info is-large">
+              <i class="fa-solid fa-brands fa-github fa-2xl"></i>
 
-              <span class="subtitle repo-desc"> </span>
+            </span>
+          </a>
+
+          <div class="column px-6 py-6 is-shadowless has-text-left has-radius-large">
+            <span class="title repo-title"> </span>
+            <div class="subtitle py-2">
+              <span class="has-text-info icon"> <i class="fa-solid fa-star"></i> </span>
+              <span class="has-text-info star-count"></span>
+
             </div>
+
+            <span class="subtitle repo-desc"> </span>
           </div>
-        </a>
+        </div>
       </template>
 
     </div>
