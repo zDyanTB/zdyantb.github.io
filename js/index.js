@@ -1,47 +1,3 @@
-// Make navbar transparent when scroll down
-// document.addEventListener("DOMContentLoaded", () => {
-//   const is_glass = Array.prototype.slice.call(document.querySelectorAll('.is-black'), 0);
-
-
-//   // Function to handle navigation bar scroll behavior
-//   const handleNavScroll = () => {
-
-//     const currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
-
-//     is_glass.forEach(el => {
-//       if (currentScrollPosition === 0) {
-//         el.classList.remove('is-glass');
-//       } else {
-//         el.classList.add('is-glass');
-//       }
-//     });
-
-//   };
-
-//   // Throttle function to limit execution of a callback
-//   const throttle = (callback, time) => {
-//     let throttleTimer;
-//     return () => {
-//       if (throttleTimer) return;
-//       throttleTimer = true;
-//       setTimeout(() => {
-//         callback();
-//         throttleTimer = false;
-//       }, time);
-//     };
-//   };
-
-//   // Media query to check for reduced motion preference
-//   const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-//   // Event listener for scroll events
-//   window.addEventListener("scroll", () => {
-//     if (!mediaQuery.matches) {
-//       throttle(handleNavScroll, 250)();
-//     }
-//   });
-// });
-
 // Mobile menu ------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -67,18 +23,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Fetch data
-fetch('https://api.github.com/users/zDyanTB')
-  .then(response => response.json())
-  .then(data => {
+async function fetchUser(username) {
+  try {
+    const user_url = `https://api.github.com/users/${username}`;
+    const response = await fetch(user_url);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
 
     // Update HTML elements with fetched data
     document.getElementById('bio').textContent = data.bio;
     document.getElementById('avatar').src = data.avatar_url;
-  })
-  .catch(error => {
+  } catch (error) {
     console.error('Error fetching user data:', error);
-  });
-
+  }
+}
 
 // Fetch repo ----------------------------------------------------------------------
 async function fetchRepo(repoName, bannerPath) {
@@ -139,8 +99,7 @@ async function fetchRepo(repoName, bannerPath) {
 const repositories = [
   { repoName: 'zDyanTB/HyprNova', bannerPath: 'src/nova-banner.png' },
   { repoName: 'zDyanTB/ADHD-Floorp', bannerPath: '.github/banner.png' },
-  { repoName: 'zDyanTB/aesthetic-wallpapers', bannerPath: 'banner.png' }
 ];
 
-// Fetch and display repositories in order
+fetchUser("zDyanTB");
 repositories.forEach(repo => fetchRepo(repo.repoName, repo.bannerPath));

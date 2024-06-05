@@ -1,14 +1,13 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css";
-/* Define the keyframes for the jump animation */
+
 @keyframes float {
-  0%, 100% { transform: translateY(0); /* Start and end position: no translation */ }
-  50% { transform: translateY(-20px); /* Middle position: translate downwards */ }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
 /* Profile header ---------------------------------------- */
 .gradient-background {
   background: linear-gradient(135deg, #000, #333);
-  position: relative;
 }
 
 .fa-sort-down {
@@ -56,6 +55,35 @@ body::-webkit-scrollbar-thumb:hover,
 body {
   scrollbar-width: thin; /* 'thin', 'auto', or 'none' */
 }
+
+/* Animate on Scroll --------------------------------------- */
+/* @media(prefers-reduced-motion) { */
+/*   .hidden { */
+/*     transition: none; */
+/*   } */
+/* } */
+
+.reveal {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1.0s ease;
+}
+
+.reveal.navbar {
+  opacity: 0;
+  transform: translate(0, -100%);
+  transition: all 0.6s ease;
+}
+
+.reveal.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.section:nth-child(2) {
+  transition-delay: 600ms;
+}
+
 
 /* Navbar -------------------------------------------------- */
 .navbar,
@@ -120,10 +148,9 @@ body {
 }
 
 /* Repositories ------------------------------------------------------------- */
-
 .repo-img {
   transition: all 0.2s ease;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 24px 0px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 20px 30px -5px;
 }
 
 .repo-link:hover .repo-img {
@@ -132,7 +159,7 @@ body {
   opacity: 0.6;
 }
 
-.repo-link .repo-icon {
+.repo-box .repo-icon {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -141,7 +168,7 @@ body {
   transition: all 0.2s ease 0.1s; 
 }
 
-.repo-link:hover .repo-icon {
+.repo-box:hover .repo-icon {
   font-size: 3em;
   opacity: 1;
 }

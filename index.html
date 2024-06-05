@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
   <script src="https://kit.fontawesome.com/8da0c7582a.js" crossorigin="anonymous"></script>
+  <script src="js/index.js"></script>
+  <script defer src="js/on_scroll.js"></script>
+
 </head>
 
 <body class="">
@@ -16,7 +19,7 @@
 
     <!-- Navbar ------------------------------------------------- -->
     <!-- Make changes to the js file to change the colorscheme -->
-    <nav class="navbar is-black has-radius-large is-fixed-top mx-5 my-4" role="navigation">
+    <nav class="navbar reveal is-black has-radius-large is-fixed-top mx-5 my-4" role="navigation">
 
       <div class="navbar-brand mx-5 px-1 py-1">
         <a class="navbar-item has-indicator has-radius-large" href="#">
@@ -92,7 +95,9 @@
 
       <!-- Background image -->
       <div class="hero-body"> <!-- Avatar image, provided by js -->
-        <div class="section card is-shadowless has-radius-large">
+
+        <!-- Profile card -->
+        <div class="section reveal card is-shadowless has-radius-large">
 
           <figure class="image is-128x128 py-2 px-2">
             <img class="has-radius-large" id="avatar" src="" alt="User avatar">
@@ -133,7 +138,7 @@
     </section>
 
     <!-- Projects --------------------------------------------------------------- -->
-    <div class="gradient-background">
+    <div class="gradient-background is-relative">
 
       <!-- Title -->
       <div class="has-text-centered section">
@@ -146,20 +151,20 @@
       <!-- Template, by js -->
       <template id="repo-template">
 
-        <div class="columns is-multiline section is-medium">
+        <div class="section is-medium">
 
-          <a class="repo-link is-relative" href="">
-            <div class="column">
+          <div class="repo-box reveal is-relative">
+            <a class="repo-link" href="">
               <img class="repo-img has-radius-large" src="" alt="Repository image" />
-            </div>
+            </a>
 
             <span class="icon repo-icon has-text-info is-large">
               <i class="fa-solid fa-brands fa-github fa-2xl"></i>
 
             </span>
-          </a>
+          </div>
 
-          <div class="column px-6 py-6 is-shadowless has-text-left has-radius-large">
+          <div class="px-6 py-6 reveal is-shadowless has-text-left has-radius-large">
             <span class="title repo-title"> </span>
             <div class="subtitle py-2">
               <span class="has-text-info icon"> <i class="fa-solid fa-star"></i> </span>
@@ -175,7 +180,6 @@
     </div>
 
   </div>
-  <script src="index.js"></script>
 </body>
 
 </html>
