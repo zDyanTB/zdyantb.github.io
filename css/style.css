@@ -5,6 +5,24 @@
   50% { transform: translateY(-20px); }
 }
 
+@keyframes slide-bottom {
+  0% { 
+    transform: translateY(-100%);
+    opacity: 0; }
+  100% { 
+    transform: translateY(0);
+    opacity: 1; }
+}
+
+@keyframes slide-right {
+  0% { 
+    transform: translateX(-100%);
+    opacity: 0; }
+  100% { 
+    transform: translateX(0);
+    opacity: 1; }
+}
+
 /* Profile header ---------------------------------------- */
 .gradient-background {
   background: linear-gradient(135deg, #000, #333);
@@ -69,21 +87,27 @@ body {
   transition: all 1.0s ease;
 }
 
-.reveal.navbar {
-  opacity: 0;
-  transform: translate(0, -100%);
-  transition: all 0.6s ease;
-}
-
-.reveal.show {
-  transform: translateX(0);
+.show {
+  transform: translate(0,0);
   opacity: 1;
 }
 
 .section:nth-child(2) {
   transition-delay: 600ms;
 }
+/* Animate ------------------------------------------------- */
 
+.is-active * {
+  animation: none !important;
+  transition: none !important;
+}
+.slide-bottom {
+  animation: slide-bottom 0.8s ease;
+}
+
+.slide-right {
+  animation: slide-right 1s ease;
+}
 
 /* Navbar -------------------------------------------------- */
 .navbar,
@@ -99,26 +123,6 @@ body {
 /* Disable border on firefox */
 .maxfocus-highlighted {
   box-shadow: none !important;
-}
-
-/* @media screen and (max-width: 1024px) { */
-/*   .navbar-menu .has-indicator { */
-/*     display: inline-block; */
-/*   } */
-/* } */
-
-/* Frost Glass -------------------------------------------- */
-@media (min-width: 1024px) {
-  .is-glass {
-    /* Trick to trigger gpu */
-    transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-
-    background-color: rgba(0,0,0,.2) !important;
-    backdrop-filter: saturate(150%) blur(10px); /* Adjust the blur intensity */
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.4); /* Soft shadow */
-  }
 }
 
 /* Indicator on hover ------------------------------------------  */
@@ -150,12 +154,12 @@ body {
 /* Repositories ------------------------------------------------------------- */
 .repo-img {
   transition: all 0.2s ease;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 20px 30px -5px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 20px 30px -15px;
 }
 
 .repo-link:hover .repo-img {
   transform: scale(0.95);
-  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -5px;
   opacity: 0.6;
 }
 
