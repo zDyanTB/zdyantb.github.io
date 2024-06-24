@@ -97,7 +97,7 @@ async function fetchRepo(repoName, bannerPath) {
 
 // Define repositories and their banner paths
 const repositories = [
-  { repoName: 'zDyanTB/HyprNova', bannerPath: 'src/nova-banner.png' },
+  { repoName: 'zDyanTB/HyprNova', bannerPath: '.github/nova-banner.png' },
   { repoName: 'zDyanTB/ADHD-Floorp', bannerPath: '.github/banner.png' },
 ];
 
