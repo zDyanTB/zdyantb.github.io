@@ -30,7 +30,23 @@
        url('GeistVF.ttf') format('truetype');
 }
 
+body {
+  font-family: 'Geist', Fallback, sans-serif !important;
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
 :root {
+  --accent-color: #BDE6FB;
+  --on-accent-color: #191F22;
+
+  --secondary-color: #FF715B;
+  --on-secondary-color: #4A0A00;
+
+  --hover-color: rgba(255,255,255, 0.125);
+
   --xxs:    .25rem;
   --xs:     .5rem;
   --s:      .75rem;
@@ -40,12 +56,10 @@
   --xxl:    2.5rem;
 }
 
-body {
-  font-family: 'Geist', Fallback, sans-serif !important;
-}
-
-html {
-  scroll-behavior: smooth !important;
+.icon { color: var(--accent-color); }
+.card-bg { background-color: var(--on-accent-color) !important; }
+.can-hover:hover {
+  background-color: var(--hover-color) !important;
 }
 
 .radius-xs { border-radius: 6px; }
@@ -54,6 +68,15 @@ html {
 .radius-l { border-radius: 16px; }
 .radius-xl { border-radius: 20px; }
 .radius-xxl { border-radius: 32px; }
+
+/* Navbar ------------------------------------------------- */
+.navbar-burger {
+  color: var(--accent-color) !important;
+}
+
+.navbar-link:not(.is-arrowless)::after {
+  border-color: var(--accent-color) !important;
+}
 
 /* Profile header ---------------------------------------- */
 .gradient-background {
