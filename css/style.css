@@ -34,6 +34,10 @@ body {
   font-family: 'Geist', Fallback, sans-serif !important;
 }
 
+html {
+  scroll-behavior: smooth !important;
+}
+
 /* Profile header ---------------------------------------- */
 .gradient-background {
   background: linear-gradient(135deg, #000, #333);
