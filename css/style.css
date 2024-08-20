@@ -23,6 +23,17 @@
     opacity: 1; }
 }
 
+@font-face {
+  font-family: 'Geist';
+  src: url('GeistVF.woff2') format('woff2'),
+       url('GeistVF.woff') format('woff'),
+       url('GeistVF.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Geist', Fallback, sans-serif !important;
+}
+
 /* Profile header ---------------------------------------- */
 .gradient-background {
   background: linear-gradient(135deg, #000, #333);
