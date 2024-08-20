@@ -39,8 +39,10 @@ html {
 }
 
 :root {
+  --surface-color: #191F22;
+
   --accent-color: #BDE6FB;
-  --on-accent-color: #191F22;
+  --on-accent-color: #131719;
 
   --secondary-color: #FF715B;
   --on-secondary-color: #4A0A00;
@@ -57,10 +59,8 @@ html {
 }
 
 .icon { color: var(--accent-color); }
-.card-bg { background-color: var(--on-accent-color) !important; }
-.can-hover:hover {
-  background-color: var(--hover-color) !important;
-}
+.card-bg { background-color: var(--surface-color) !important; }
+.can-hover:hover { background-color: var(--hover-color) !important; }
 
 .radius-xs { border-radius: 6px; }
 .radius-s { border-radius: 8px; }
@@ -68,6 +68,10 @@ html {
 .radius-l { border-radius: 16px; }
 .radius-xl { border-radius: 20px; }
 .radius-xxl { border-radius: 32px; }
+
+.has-soft-shadow { box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px; }
+.has-hard-shadow { box-shadow: rgba(0, 0, 0, 1) 0px 5px 15px; }
+.has-inner-shadow { box-shadow: rgba(0, 0, 0, 0.75) 0px 2px 4px 0px inset; }
 
 /* Navbar ------------------------------------------------- */
 .navbar-burger {
@@ -79,9 +83,6 @@ html {
 }
 
 /* Profile header ---------------------------------------- */
-.gradient-background {
-  background: linear-gradient(135deg, #000, #333);
-}
 
 .fa-sort-down {
   animation: float 3s infinite ease-in-out;
