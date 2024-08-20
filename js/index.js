@@ -34,6 +34,7 @@ async function fetchUser(username) {
 
     // Update HTML elements with fetched data
     document.getElementById('bio').textContent = data.bio;
+    document.getElementById('account-name').textContent = data.name;
     document.getElementById('avatar').src = data.avatar_url;
   } catch (error) {
     console.error('Error fetching user data:', error);
