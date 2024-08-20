@@ -30,6 +30,16 @@
        url('GeistVF.ttf') format('truetype');
 }
 
+:root {
+  --xxs:    .25rem;
+  --xs:     .5rem;
+  --s:      .75rem;
+  --m:      1rem;
+  --l:      1.25;
+  --xl:     1.75rem;
+  --xxl:    2.5rem;
+}
+
 body {
   font-family: 'Geist', Fallback, sans-serif !important;
 }
@@ -37,6 +47,13 @@ body {
 html {
   scroll-behavior: smooth !important;
 }
+
+.radius-xs { border-radius: 6px; }
+.radius-s { border-radius: 8px; }
+.radius-m { border-radius: 12px; }
+.radius-l { border-radius: 16px; }
+.radius-xl { border-radius: 20px; }
+.radius-xxl { border-radius: 32px; }
 
 /* Profile header ---------------------------------------- */
 .gradient-background {
