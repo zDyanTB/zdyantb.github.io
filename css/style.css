@@ -1,65 +1,61 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-@keyframes slide-bottom {
-  0% { 
-    transform: translateY(-100%);
-    opacity: 0; }
-  100% { 
-    transform: translateY(0);
-    opacity: 1; }
-}
-
-@keyframes slide-right {
-  0% { 
-    transform: translateX(-100%);
-    opacity: 0; }
-  100% { 
-    transform: translateX(0);
-    opacity: 1; }
-}
-
 @font-face {
   font-family: 'Geist';
   src: url('GeistVF.woff2') format('woff2'),
-       url('GeistVF.woff') format('woff'),
-       url('GeistVF.ttf') format('truetype');
-}
-
-body {
-  font-family: 'Geist', Fallback, sans-serif !important;
+    url('GeistVF.woff') format('woff'),
+    url('GeistVF.ttf') format('truetype');
 }
 
 html {
   scroll-behavior: smooth !important;
 }
 
-:root {
-  --surface-color: #191F22;
-
-  --accent-color: #BDE6FB;
-  --on-accent-color: #131719;
-
-  --secondary-color: #FF715B;
-  --on-secondary-color: #4A0A00;
-
-  --hover-color: rgba(255,255,255, 0.125);
-
-  --xxs:    .25rem;
-  --xs:     .5rem;
-  --s:      .75rem;
-  --m:      1rem;
-  --l:      1.25;
-  --xl:     1.75rem;
-  --xxl:    2.5rem;
+body {
+  font-family: 'Geist', Fallback, sans-serif !important;
 }
 
+:root {
+
+  --black-color: #090A0C;
+  --white-color: #E5E5E5;
+  --gray-color: #191919;
+
+  --hover-color: rgba(255, 255, 255, 0.1);
+
+  --accent-color: #FF715B;
+  --on-accent-color: #4A0A00;
+
+
+  --xxs: .25rem;
+  --xs: .5rem;
+  --s: .75rem;
+  --m: 1rem;
+  --l: 1.25;
+  --xl: 1.75rem;
+  --xxl: 2.5rem;
+}
+
+.dark-mode {
+  background-color: var(--black-color) !important;
+  color: var(--white-color) !important;
+}
+
+.dark-mode .icon {
+  color: var(--white-color);
+}
+
+.light-mode {
+  background-color: var(--white-color) !important;
+  color: var(--black-color) !important;
+}
+.light-mode .icon {
+  color: var(--black-color);
+}
+
+
 .icon { color: var(--accent-color); }
-.card-bg { background-color: var(--surface-color) !important; }
+
 .can-hover:hover { background-color: var(--hover-color) !important; }
 
 .radius-xs { border-radius: 6px; }
@@ -69,9 +65,8 @@ html {
 .radius-xl { border-radius: 20px; }
 .radius-xxl { border-radius: 32px; }
 
-.has-soft-shadow { box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px; }
-.has-hard-shadow { box-shadow: rgba(0, 0, 0, 1) 0px 5px 15px; }
-.has-inner-shadow { box-shadow: rgba(0, 0, 0, 0.75) 0px 2px 4px 0px inset; }
+.has-soft-shadow { box-shadow: rgba(0, 0, 0, 0.55) 2px 5px 15px; }
+.has-hard-shadow { box-shadow: rgba(0, 0, 0, 1) 2px 5px 15px; }
 
 /* Navbar ------------------------------------------------- */
 .navbar-burger {
@@ -82,53 +77,114 @@ html {
   border-color: var(--accent-color) !important;
 }
 
-/* Profile header ---------------------------------------- */
-
-.fa-sort-down {
-  animation: float 3s infinite ease-in-out;
+.navbar,
+.navbar-dropdown {
+  transition: all 0.2s ease-out;
 }
 
-.profile-img-overlay, .profile-svg-overlay { 
+.navbar-menu,
+.navbar-dropdown .navbar-item:not(.is-active, .is-selected) {
+  background-color: inherit !important;
+}
+
+/* Disable border on firefox */
+.maxfocus-highlighted {
+  box-shadow: none !important;
+}
+
+/* Repositories ------------------------------------------------------------- */
+
+#projects {
+  font-size: clamp(2rem, 10vmin, 8rem);
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  --stretch-multiplier: 5;
+
+  display: flex;
+  gap: 0.02ch;
+  justify-content: center;
+  align-items: center;
+
+  scroll-margin-top: 100px;
+}
+
+#projects {
+  --stretch: var(--stretch-multiplier);
+}
+
+.stretch-o {
+  height: 1.12ch;
+  width: calc(var(--stretch) * 1.16ch);
+  translate: 0 -0.01ch;
+  border: 0.25ch solid var(--white-color);
+  border-radius: 1ch;
+  /* transition: width 0.55s; */
+  position: relative;
+}
+
+.sr-only {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: .1;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
-.profile-svg-overlay {
-  opacity: .5;
+.repo-img {
+  transition: all 0.2s ease;
 }
 
-/* Scrollbar --------------------------------------------- */
-::-webkit-scrollbar {
-  width: 0.3rem; /* Width of the scrollbar */
-  margin: 5px;
+.repo-link:hover .repo-img {
+  transform: scale(1.04);
+  opacity: 0.8;
 }
 
-body::-webkit-scrollbar-track,
-::-webkit-scrollbar-track {
-  background: transparent; /* Track color */
+.repo-box .repo-icon {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  font-size: 3em;
+  transition: all 0.2s ease;
 }
 
-body::-webkit-scrollbar-thumb,
-::-webkit-scrollbar-thumb {
-  background: #ccc; /* Thumb color */
-  border-radius: 4px; /* Rounded corners */
-
+.repo-box:hover .repo-icon {
+  top: 50%;
+  opacity: 1;
 }
 
-body::-webkit-scrollbar-thumb:hover,
-::-webkit-scrollbar-thumb:hover {
-  background: #fff; /* Thumb color on hover */
+/* Indicator on hover ------------------------------------------  */
+.has-indicator::before {
+  background-color: white;
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  height: 4px;
+  width: 40%;
+  border-radius: 6px;
+  opacity: 0;
+  transform: translate(-50%, 100%);
+  transition: all .2s 0.1s ease-in-out;
 }
 
-/* For Firefox */
-/* Set the width of the scrollbar */
-body {
-  scrollbar-width: thin; /* 'thin', 'auto', or 'none' */
+.has-indicator:hover::before {
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
+
+@media screen and (max-width: 1024px) {
+  .has-indicator::before {
+    display: none;
+    /* Disable on small screens */
+  }
+}
+
 
 /* Animate on Scroll --------------------------------------- */
 /* @media(prefers-reduced-motion) { */
@@ -144,91 +200,45 @@ body {
 }
 
 .show {
-  transform: translate(0,0);
+  transform: translate(0, 0);
   opacity: 1;
 }
 
 .section:nth-child(2) {
   transition-delay: 600ms;
 }
-/* Animate ------------------------------------------------- */
 
-.is-active * {
-  animation: none !important;
-  transition: none !important;
-}
-.slide-bottom {
-  animation: slide-bottom 0.8s ease;
+/* Scrollbar --------------------------------------------- */
+::-webkit-scrollbar {
+  width: 0.3rem;
+  /* Width of the scrollbar */
+  margin: 5px;
 }
 
-.slide-right {
-  animation: slide-right 1s ease;
+body::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
+  background: transparent;
+  /* Track color */
 }
 
-/* Navbar -------------------------------------------------- */
-.navbar,
-.navbar-dropdown {
-  transition: all 0.5s ease-out;
+body::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  /* Thumb color */
+  border-radius: 4px;
+  /* Rounded corners */
+
 }
 
-.navbar-menu,
-.navbar-dropdown .navbar-item:not(.is-active, .is-selected) {
-  background-color: inherit !important;
+body::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+  /* Thumb color on hover */
 }
 
-/* Disable border on firefox */
-.maxfocus-highlighted {
-  box-shadow: none !important;
-}
-
-/* Indicator on hover ------------------------------------------  */
-.has-indicator::before {
-  background-color: white;
-  content: "";
-  position: absolute;
-  bottom: 4px;
-  left: 50%;
-  height: 4px;
-  width: 40%;
-  border-radius: 6px;
-  opacity: 0;
-  transform: translate(-50%, 100%); 
-  transition: all .2s 0.1s ease-in-out;
-}
-
-.has-indicator:hover::before {
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
-
-@media screen and (max-width: 1024px) {
-  .has-indicator::before {
-    display: none; /* Disable on small screens */
-  }
-}
-
-/* Repositories ------------------------------------------------------------- */
-.repo-img {
-  transition: all 0.2s ease;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 20px 30px -15px;
-}
-
-.repo-link:hover .repo-img {
-  transform: scale(0.95);
-  box-shadow: rgb(0, 0, 0) 0px 20px 30px -5px;
-  opacity: 0.6;
-}
-
-.repo-box .repo-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: all 0.2s ease 0.1s; 
-}
-
-.repo-box:hover .repo-icon {
-  font-size: 3em;
-  opacity: 1;
+/* For Firefox */
+/* Set the width of the scrollbar */
+body {
+  scrollbar-width: thin;
+  /* 'thin', 'auto', or 'none' */
 }
