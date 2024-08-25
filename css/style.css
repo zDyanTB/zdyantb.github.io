@@ -49,13 +49,10 @@ body {
   background-color: var(--white-color) !important;
   color: var(--black-color) !important;
 }
-.light-mode .icon {
-  color: var(--black-color);
-}
 
+.light-mode .icon { color: var(--black-color); }
 
 .icon { color: var(--accent-color); }
-
 .can-hover:hover { background-color: var(--hover-color) !important; }
 
 .radius-xs { border-radius: 6px; }
@@ -158,33 +155,20 @@ body {
   opacity: 1;
 }
 
-/* Indicator on hover ------------------------------------------  */
-.has-indicator::before {
-  background-color: white;
-  content: "";
-  position: absolute;
-  bottom: 4px;
-  left: 50%;
-  height: 4px;
-  width: 40%;
-  border-radius: 6px;
-  opacity: 0;
-  transform: translate(-50%, 100%);
-  transition: all .2s 0.1s ease-in-out;
+/* Switch mode ----------------------------------------------- */
+#switch-mode {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  background-color: var(--black-color);
+  font-size: 1.75rem;
+  transition: .25s -.05s;
 }
 
-.has-indicator:hover::before {
-  opacity: 1;
-  transform: translate(-50%, 0);
+#switch-mode:hover {
+  background-color: var(--gray-color);
 }
-
-@media screen and (max-width: 1024px) {
-  .has-indicator::before {
-    display: none;
-    /* Disable on small screens */
-  }
-}
-
 
 /* Animate on Scroll --------------------------------------- */
 /* @media(prefers-reduced-motion) { */
