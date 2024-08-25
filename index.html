@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
   <script src="https://kit.fontawesome.com/8da0c7582a.js" crossorigin="anonymous"></script>
+  <script src="js/theming.js"></script>
   <script src="js/index.js"></script>
   <script defer src="js/on_scroll.js"></script>
 
@@ -97,53 +98,60 @@
   </section>
 
   <!-- Projects --------------------------------------------------------------- -->
-  <div class="" ">
+  <div>
 
     <!-- Title -->
-    <div class=" container is-max-widescreen ">
-    <span class=" sr-only">Projects</span>
-    <span class="title" id="projects" aria-hidden="true">
-      <span>Pr</span>
-      <span class="stretch-o"></span>
-      <span>jects</span>
+    <div class="container is-max-widescreen ">
+      <span class="sr-only">Projects</span>
+      <span class="title" id="projects" aria-hidden="true">
+        <span>Pr</span>
+        <span class="stretch-o"></span>
+        <span>jects</span>
+      </span>
+    </div>
+
+    <!-- Content -->
+    <div class="container is-fullhd" id="repo-container"> </div>
+
+    <!-- Template, by js -->
+    <template id="repo-template">
+
+      <div class="section is-medium">
+
+        <div class="repo-box is-relative">
+          <a class="repo-link" href="">
+            <img class="repo-img radius-xxl" src="" alt="Repository image" />
+          </a>
+
+          <span class="icon repo-icon is-large">
+            <i class="fa-solid fa-link fa-2xl"></i>
+
+          </span>
+        </div>
+
+        <div class="px-2 py-2 has-text-left radius-l">
+          <span class="title repo-title"> </span>
+          <div class="subtitle py-2">
+            <span class="icon"> <i class="fa-solid fa-star"></i> </span>
+            <span class="star-count"></span>
+
+          </div>
+
+          <span class="subtitle repo-desc"> </span>
+        </div>
+      </div>
+    </template>
+
+  </div>
+
+  <div id="switch-mode" class="has-hard-shadow radius-xl py-4 px-4">
+    <span class="icon is-large">
+      <i id="switch-icon" class="fas fa-moon fa-xl"></i>
     </span>
   </div>
 
-  <!-- Content -->
-  <div class="container is-fullhd" id="repo-container"> </div>
-
-  <!-- Template, by js -->
-  <template id="repo-template">
-
-    <div class="section is-medium">
-
-      <div class="repo-box is-relative">
-        <a class="repo-link" href="">
-          <img class="repo-img radius-xxl" src="" alt="Repository image" />
-        </a>
-
-        <span class="icon repo-icon is-large">
-          <i class="fa-solid fa-link fa-2xl"></i>
-
-        </span>
-      </div>
-
-      <div class="px-2 py-2 has-text-left radius-l">
-        <span class="title repo-title"> </span>
-        <div class="subtitle py-2">
-          <span class="icon"> <i class="fa-solid fa-star"></i> </span>
-          <span class="star-count"></span>
-
-        </div>
-
-        <span class="subtitle repo-desc"> </span>
-      </div>
-    </div>
-  </template>
-
   </div>
-
-  </div>
+  <div class="clip"></div>
 </body>
 
 </html>
