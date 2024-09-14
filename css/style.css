@@ -7,25 +7,18 @@
     url('GeistVF.ttf') format('truetype');
 }
 
-html {
-  scroll-behavior: smooth !important;
-}
-
-body {
-  font-family: 'Geist', Fallback, sans-serif !important;
-}
+html { scroll-behavior: smooth !important; }
+body { font-family: 'Geist', sans-serif !important; }
 
 :root {
-
   --black-color: #090A0C;
+  --black-light-color: #1F1F1F;
   --white-color: #E5E5E5;
-  --gray-color: #191919;
-
-  --hover-color: rgba(255, 255, 255, 0.1);
-
-  --accent-color: #FF715B;
-  --on-accent-color: #4A0A00;
-
+  --white-dark-color: #E0E0E0;
+  
+  --primary-color: #FF715B;
+  --secondary-color: #CBEAA6;
+  --tertiary-color: #15A6F0; 
 
   --xxs: .25rem;
   --xs: .5rem;
@@ -36,24 +29,63 @@ body {
   --xxl: 2.5rem;
 }
 
+.dark-mode.light {
+  --surface-color: #F5F5F5;
+  --on-surface-color: #000;
+  --hover-color: rgba(0, 0, 0, 0.1);
+
+  /* --hover-color: #E0E0E0; */
+
+  --accent-color: var(--primary-color);
+  background-color: var(--surface-color) !important;
+}
+
+/* Dark mode */
 .dark-mode {
-  background-color: var(--black-color) !important;
-  color: var(--white-color) !important;
+  --surface-color: #090A0C;
+  --on-surface-color: #E5E5E5;
+  --hover-color: rgba(255, 255, 255, 0.1);
+
+  --accent-color: var(--tertiary-color);
+
+  background-color: var(--surface-color) !important;
 }
 
-.dark-mode .icon {
-  color: var(--white-color);
+.main-frame {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 212, 255, 0) 100%), url(../assets/img/pattern-waves.svg);
+  background-repeat: repeat;
 }
 
-.light-mode {
-  background-color: var(--white-color) !important;
-  color: var(--black-color) !important;
+.main-frame.light {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(0, 212, 255, 0) 100%), url(../assets/img/pattern-waves-light.svg);
 }
 
-.light-mode .icon { color: var(--black-color); }
+.icon {
+  color: var(--on-surface-color) !important;
+}
+.navbar-burger,
+.accent-color { 
+  color: var(--accent-color) !important;
+}
+.navbar-link:not(.is-arrowless)::after {
+  border-color: var(--accent-color) !important;
+}
+.can-hover:hover { 
+  background-color: var(--hover-color) !important;
+}
 
-.icon { color: var(--accent-color); }
-.can-hover:hover { background-color: var(--hover-color) !important; }
+#switch-mode:hover {
+  background-color: #191919 !important;
+}
+
+#switch-mode.light:hover{
+  background-color: #DDD !important;
+}
+
+span:not([aria-hidden="true"]),
+title {
+  color: var(--on-surface-color);
+}
 
 .radius-xs { border-radius: 6px; }
 .radius-s { border-radius: 8px; }
@@ -65,19 +97,21 @@ body {
 .has-soft-shadow { box-shadow: rgba(0, 0, 0, 0.55) 2px 5px 15px; }
 .has-hard-shadow { box-shadow: rgba(0, 0, 0, 1) 2px 5px 15px; }
 
+
+.navbar > * {
+  transition: none !important;
+  animation: none !important; 
+}
+
+.main-frame, .icon, .navbar > *, .navbar-burger, .accent-color, .navbar-link:not(.is-arrowless)::after, #switch-mode, title, subtitle, p, span:not([aria-hidden="true"]){
+  transition: background-color 1.0s ease, color 0.6s ease-in-out, border-color 0.6s ease;
+}
+
+.navbar > *:hover, .navbar-burger:hover, #switch-mode {
+  transition: background-color 0.2s ease, color 0.2s ease-in-out !important;
+}
+
 /* Navbar ------------------------------------------------- */
-.navbar-burger {
-  color: var(--accent-color) !important;
-}
-
-.navbar-link:not(.is-arrowless)::after {
-  border-color: var(--accent-color) !important;
-}
-
-.navbar,
-.navbar-dropdown {
-  transition: all 0.2s ease-out;
-}
 
 .navbar-menu,
 .navbar-dropdown .navbar-item:not(.is-active, .is-selected) {
@@ -113,7 +147,7 @@ body {
   height: 1.12ch;
   width: calc(var(--stretch) * 1.16ch);
   translate: 0 -0.01ch;
-  border: 0.25ch solid var(--white-color);
+  border: 0.25ch solid; /* var(--white-color); */
   border-radius: 1ch;
   /* transition: width 0.55s; */
   position: relative;
@@ -136,8 +170,7 @@ body {
 }
 
 .repo-link:hover .repo-img {
-  transform: scale(1.04);
-  opacity: 0.8;
+  transform: scale(0.96);
 }
 
 .repo-box .repo-icon {
@@ -161,14 +194,10 @@ body {
   bottom: 1rem;
   right: 1rem;
   cursor: pointer;
-  background-color: var(--black-color);
   font-size: 1.75rem;
-  transition: .25s -.05s;
 }
 
-#switch-mode:hover {
-  background-color: var(--gray-color);
-}
+
 
 /* Animate on Scroll --------------------------------------- */
 /* @media(prefers-reduced-motion) { */
