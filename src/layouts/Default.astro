@@ -1,5 +1,6 @@
 ---
 const { title } = Astro.props
+import Navbar from '../components/Navbar.astro';
 
 import '../styles/default.css';
 ---
@@ -17,6 +18,8 @@ import '../styles/default.css';
 </head>
 
   <body>
+    <Navbar />
+
     <div class="main-frame dark-mode">
         <slot />
     </div>
