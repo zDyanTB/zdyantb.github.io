@@ -7,7 +7,7 @@ import '../styles/default.css';
 <html lang="en">
 
 <head>
-    <title>{title}</title>
+  <title>{title}</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,3 +29,19 @@ import '../styles/default.css';
     </span>
   </div>
 </html>
+
+
+<style>
+
+.main-frame {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 212, 255, 0) 100%), url(../assets/pattern-waves.svg);
+  background-repeat: repeat;
+  min-height: 100vh;
+}
+
+
+.main-frame.light {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(0, 212, 255, 0) 100%), url(../assets/pattern-waves-light.svg);
+}
+
+</style>
