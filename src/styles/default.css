@@ -54,15 +54,6 @@ body {
   background-color: var(--surface-color) !important;
 }
 
-.main-frame {
-  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 212, 255, 0) 100%), url(../assets/pattern-waves.svg);
-  background-repeat: repeat;
-}
-
-.main-frame.light {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(0, 212, 255, 0) 100%), url(../assets/pattern-waves-light.svg);
-}
-
 .icon {
   color: var(--on-surface-color) !important;
 }
