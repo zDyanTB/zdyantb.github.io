@@ -1,0 +1,28 @@
+---
+const { username } = Astro.props;
+import { Image } from 'astro:assets';
+
+
+import { fetchGithubUser } from '../scripts/get_user_github.js';
+const data = await fetchGithubUser(username);
+---
+<section class="hero is-fullheight">
+
+  <div class="hero-body">
+
+    <!-- Profile -->
+    <div class="section columns is-6">
+
+      <div class="column is-two-thirds">
+        <figure class="image">
+          <Image inferSize={true} class="radius-xxl has-hard-shadow" id="avatar" src={data?.avatar_url ?? ''} alt={`${data?.name}'s profile`}>
+        </figure>
+      </div>
+
+      <div class="column my-4 mx-2">
+        <span class="title mb-2" id="account-name">{data?.name ?? 'N/A'}</span><br>
+        <span class="subtitle" id="bio">{data?.bio ?? 'No bio available'}</span>
+      </div>
+    </div>
+  </div>
+</section>

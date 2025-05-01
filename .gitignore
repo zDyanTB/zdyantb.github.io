@@ -1,0 +1,19 @@
+# Dependencies
+.direnv
+node_modules/
+.pnpm/
+
+# Build output
+dist/
+build/
+
+# Cache
+.astro/
+
+# environment variables / logs
+.env
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db

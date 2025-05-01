@@ -1,0 +1,37 @@
+---
+import Default from '../layouts/Default.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from  '../components/Hero.astro';
+import RepoCard from '../components/RepoCard.astro';
+
+---
+<Default title="Home">
+  <!-- Navbar ------------------------------------------------- -->
+  <Navbar />
+
+  <!-- Profile header --------------------------------------------------- -->
+  <Hero username ="zDyanTB"/>      
+
+  <!-- Projects --------------------------------------------------------------- -->
+    <!-- Title -->
+  <div class="container is-max-widescreen">
+    <span class="sr-only">Projects</span>
+    <span class="title" style="background-color: transparent !important" id="projects" aria-hidden="true">
+      <span>Pr</span>
+      <span class="stretch-o"></span>
+      <span>jects</span>
+    </span>
+  </div>
+
+  <!-- Content -->
+  <div class="container is-fullhd" id="repo-container">
+    <RepoCard repoName="zDyanTB/HyprNova" bannerPath=".github/nova-banner.png" />
+  </div>
+
+  <div id="switch-mode" class="has-soft-shadow dark-mode radius-xl py-4 px-4">
+    <span class="icon accent-color is-large">
+      <i id="switch-icon" class="fas fa-moon fa-xl"></i>
+    </span>
+  </div>
+<div class="clip"></div>
+</Default>

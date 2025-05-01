@@ -1,0 +1,50 @@
+---
+const { repoName, bannerPath } = Astro.props;
+
+const apiUrl = `https://api.github.com/repos/${repoName}`;
+const bannerUrl = `${apiUrl}/contents/${bannerPath}`;
+let bannerImg = null;
+let repo = null;
+
+try {
+  const req = await fetch(apiUrl);
+  if (!req.ok) throw new Error(`Repo fetch failed : ${req.status}`);
+  repo = await req.json();
+
+  // Fetch banner image
+  const bannerRes = await fetch(bannerUrl);
+  if (!bannerRes.ok) throw new Error(`Banner fetch failed: ${bannerRes.status}`)
+
+  const banner = await bannerRes.json();
+  bannerImg = banner.download_url;
+
+} catch (error) {
+  console.error('Error fetching repository data:', error);
+}
+
+import { Image } from 'astro:assets';
+---
+
+<div class="section is-medium">
+  <div class="repo-box is-relative">
+    <a class="repo-link" href={repo?.html_url}>
+      <Image inferSize={true} class="repo-img has-hard-shadow radius-xxl" src={bannerImg} alt={`${repo?.name} banner`} />
+    </a>
+
+    <span class="icon accent-color repo-icon is-large">
+      <i class="fa-solid fa-link fa-2xl"></i>
+
+    </span>
+  </div>
+
+  <div class="px-2 py-2 has-text-left radius-l">
+    <span class="title repo-title">{repo?.name}</span>
+    <div class="subtitle py-2">
+      <span class="icon accent-color"> <i class="fa-solid fa-star"></i> </span>
+      <span class="star-count">{repo?.stargazers_count}</span>
+
+    </div>
+
+    <span class="subtitle repo-desc">{repo?.description}</span>
+  </div>
+</div>
