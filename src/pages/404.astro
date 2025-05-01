@@ -1,0 +1,27 @@
+---
+import Default from '../layouts/Default.astro';
+---
+
+<Default title="Page not found">
+  <div class="hero is-fullheight">
+    <div class="hero-body is-flex is-justify-content-center">
+      <div class="section radius-m has-hard-shadow dark-mode has-text-centered">
+        <p class="">Wrong place, pal</p>
+        <a href="/">
+          <p class="is-size-1">Go home</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</Default>
+
+<style>
+  .section {
+    min-width: 30vw;
+  }
+
+  .hero-body > * {
+    transition: background-color 0.4s ease, color 0.6s ease-in-out;
+  }
+
+</style>
