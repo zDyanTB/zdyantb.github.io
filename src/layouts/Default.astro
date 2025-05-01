@@ -16,9 +16,16 @@ import '../styles/default.css';
 
 </head>
 
-<body>
-  <div class="main-frame dark-mode">
-      <slot />
+  <body>
+    <div class="main-frame dark-mode">
+        <slot />
+    </div>
+  </body>
+
+  
+  <div id="switch-mode" class="has-soft-shadow dark-mode radius-xl py-4 px-4">
+    <span class="icon accent-color is-large">
+      <i id="switch-icon" class="fas fa-moon fa-xl"></i>
+    </span>
   </div>
-</body>
 </html>
