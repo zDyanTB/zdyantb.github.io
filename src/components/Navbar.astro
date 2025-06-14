@@ -1,86 +1,45 @@
 ---
 
 ---
-<nav class="navbar has-soft-shadow is-fixed-top dark-mode radius-l mx-6 my-4" role="navigation">
+<nav id="navbar" class="dark-mode is-flex is-justify-content-space-around radius-l p-3" role="navigation">
 
-  <div class="navbar-brand mx-4 px-1 py-1">
-    <a class="navbar-item can-hover radius-m" href="/">
-      <span class="icon is-medium">
+  <div>
+
+    <!-- Icons -->
+    <a class="can-hover is-inline-block radius-l p-2" href="/">
+      <span class="icon is-large">
         <i class="fa-solid fa-house fa-xl"></i>
       </span>
     </a>
 
-    <!-- Burger, on the right -->
-    <a role="button" class="navbar-burger can-hover" aria-label="menu" aria-expanded="false" data-target="navMenu">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
+    <a class="can-hover is-inline-block radius-l p-2" href="https://github.com/zDyanTB">
+      <span class="icon is-large">
+        <i class="fa-brands fa-github fa-xl"></i>
+      </span>
     </a>
-  </div>
 
-  <!-- Right items -->
-  <div class="navbar-menu is-shadowless mx-4" id="navMenu">
-    <div class="navbar-end">
+    <a class="can-hover is-inline-block radius-l p-2" href="https://ko-fi.com/zdyant">
+      <span class="icon is-large">
+        <i class="fas fa-mug-hot fa-xl"></i>
+      </span>
+    </a>
 
-      <!-- Dropdown -->
-      <div class="navbar-item has-dropdown is-hoverable can-hover radius-m mx-1 my-1">
-        <a class="navbar-link radius-m" href="#projects" style="background-color: transparent">
-          <span>Projects</span>
-        </a>
-
-        <div class="navbar-dropdown dark-mode is-boxed is-left">
-
-          <a class=" navbar-item">
-            <span>Hyprnova</span>
-          </a>
-          <a class="navbar-item">
-            <span>Foocus</span>
-          </a>
-          <hr class="navbar-divider">
-          <div class="navbar-item has-text-dark">
-            More coming soon..
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Icons -->
-      <a class="navbar-item can-hover is-inline-block radius-m mx-2 my-1" href="https://github.com/zDyanTB">
-        <span class="icon is-medium">
-          <i class="fa-brands fa-github fa-xl"></i>
-        </span>
-      </a>
-
-      <a class="navbar-item can-hover is-inline-block radius-m mx-2 my-1" href="https://ko-fi.com/zdyant">
-        <span class="icon is-medium">
-          <i class="fas fa-mug-hot fa-xl"></i>
-        </span>
-      </a>
-
-    </div>
   </div>
 </nav>
 
+<style>
+  #navbar {
+    max-width: 40%;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+
+</style>
+
 
 <script>
-// Mobile menu ------------------------------------------------------------------------
-document.addEventListener('DOMContentLoaded', () => {
-
-  // Get all "navbar-burger" elements
-  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-  // Add a click event on each of them
-  $navbarBurgers.forEach(el => {
-    el.addEventListener('click', () => {
-
-      // Get the target from the "data-target" attribute
-      const target = el.dataset.target;
-      const $target = document.getElementById(target);
-
-      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-      el.classList.toggle('is-active');
-      $target.classList.toggle('is-active');
-    });
-  });
-
-});
 </script>

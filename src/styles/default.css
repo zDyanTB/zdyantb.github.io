@@ -58,15 +58,6 @@ body {
   color: var(--on-surface-color) !important;
 }
 
-.navbar-burger,
-.accent-color {
-  color: var(--accent-color) !important;
-}
-
-.navbar-link:not(.is-arrowless)::after {
-  border-color: var(--accent-color) !important;
-}
-
 .can-hover:hover {
   background-color: var(--hover-color) !important;
 }
@@ -114,39 +105,6 @@ title {
 
 .has-hard-shadow {
   box-shadow: rgba(50, 50, 93, 0.65) 0px 50px 100px -20px, rgba(0, 0, 0, 0.65) 0px 30px 60px -30px;
-}
-
-
-.navbar>* {
-  transition: none !important;
-  animation: none !important;
-}
-
-.main-frame,
-.icon,
-.navbar>*,
-.navbar-burger,
-.accent-color,
-.navbar-link:not(.is-arrowless)::after,
-#switch-mode,
-title,
-subtitle,
-p,
-span:not([aria-hidden="true"]) {
-  transition: background-color 1.0s ease, color 0.6s ease-in-out, border-color 0.6s ease;
-}
-
-.navbar>*:hover,
-.navbar-burger:hover,
-#switch-mode {
-  transition: background-color 0.2s ease, color 0.2s ease-in-out !important;
-}
-
-/* Navbar ------------------------------------------------- */
-
-.navbar-menu,
-.navbar-dropdown .navbar-item:not(.is-active, .is-selected) {
-  background-color: inherit !important;
 }
 
 /* Disable border on firefox */
