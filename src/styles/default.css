@@ -22,6 +22,8 @@ body {
   --white-mid-opacity:  rgba(255,255,255, 0.6);
   --white-high-opacity: rgba(255,255,255, 0.8);
 
+  --hover-color: rgba(255, 255, 255, 0.1);
+
   --xxs: .25rem;
   --xs: .5rem;
   --s: .75rem;
@@ -31,52 +33,29 @@ body {
   --xxl: 2.5rem;
 }
 
+.radius-xs  { border-radius: 6px; }
+.radius-s   { border-radius: 8px; }
+.radius-m   { border-radius: 12px; }
+.radius-l   { border-radius: 16px; }
+.radius-xl  { border-radius: 20px; }
+.radius-xxl { border-radius: 32px; }
+
+a .icon { color: var(--white-mid-opacity) !important; }
+a:hover .icon { color: white !important; }
+
+
 /* Dark mode */
 .dark-mode {
   --surface-color: #090A0C;
   --on-surface-color: #E5E5E5;
-  --hover-color: rgba(255, 255, 255, 0.1);
 
   --accent-color: var(--tertiary-color);
 
   background-color: var(--surface-color) !important;
 }
 
-.icon {
-  color: var(--on-surface-color) !important;
-}
-
 .can-hover:hover {
   background-color: var(--hover-color) !important;
-}
-
-span:not([aria-hidden="true"]),
-title {
-  color: var(--on-surface-color);
-}
-
-.radius-xs {
-  border-radius: 6px;
-}
-
-.radius-s {
-  border-radius: 8px;
-}
-
-.radius-m {
-  border-radius: 12px;
-}
-
-.radius-l {
-  border-radius: 16px;
-}
-
-.radius-xl {
-  border-radius: 20px;
-}
-
-.radius-xxl {
-  border-radius: 32px;
 }
 
 /* Disable border on firefox */
@@ -84,13 +63,20 @@ title {
   box-shadow: none !important;
 }
 
+.is-card,
 .has-border {
   border: 1px solid var(--white-low-opacity);
 }
 
-.floating {
-  background-color: var(--dark-high-opacity);
-  backdrop-filter: blur(2px);
+.is-card,
+.is-floating {
+  background-color: var(--black-mid-opacity);
+  backdrop-filter: blur(12px);
+}
+
+.is-card,
+.has-shadow {
+  box-shadow: rgba(0,0,0, 0.4) 0px 0px 15px;
 }
 
 /* Repositories ------------------------------------------------------------- */
