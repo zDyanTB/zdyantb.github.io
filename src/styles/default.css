@@ -14,14 +14,13 @@ body {
 }
 
 :root {
-  --black-color: #090A0C;
-  --black-light-color: #1F1F1F;
-  --white-color: #E5E5E5;
-  --white-dark-color: #E0E0E0;
+  --black-low-opacity:   rgba(0,0,0, 0.2);
+  --black-mid-opacity:   rgba(0,0,0, 0.6);
+  --black-high-opacity:  rgba(0,0,0,0.8);
 
-  --primary-color: #FF715B;
-  --secondary-color: #CBEAA6;
-  --tertiary-color: #15A6F0;
+  --white-low-opacity:  rgba(255,255,255, 0.2);
+  --white-mid-opacity:  rgba(255,255,255, 0.6);
+  --white-high-opacity: rgba(255,255,255, 0.8);
 
   --xxs: .25rem;
   --xs: .5rem;
@@ -99,17 +98,18 @@ title {
   border-radius: 32px;
 }
 
-.has-soft-shadow {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 8px 0px;
-}
-
-.has-hard-shadow {
-  box-shadow: rgba(50, 50, 93, 0.65) 0px 50px 100px -20px, rgba(0, 0, 0, 0.65) 0px 30px 60px -30px;
-}
-
 /* Disable border on firefox */
 .maxfocus-highlighted {
   box-shadow: none !important;
+}
+
+.has-border {
+  border: 1px solid var(--white-low-opacity);
+}
+
+.floating {
+  background-color: var(--dark-high-opacity);
+  backdrop-filter: blur(2px);
 }
 
 /* Repositories ------------------------------------------------------------- */
@@ -185,30 +185,6 @@ title {
   right: 1rem;
   cursor: pointer;
   font-size: 1.75rem;
-}
-
-
-
-/* Animate on Scroll --------------------------------------- */
-/* @media(prefers-reduced-motion) { */
-/*   .hidden { */
-/*     transition: none; */
-/*   } */
-/* } */
-
-.reveal {
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: all 1.0s ease;
-}
-
-.show {
-  transform: translate(0, 0);
-  opacity: 1;
-}
-
-.section:nth-child(2) {
-  transition-delay: 600ms;
 }
 
 /* Scrollbar --------------------------------------------- */
