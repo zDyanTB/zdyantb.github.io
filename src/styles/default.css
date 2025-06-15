@@ -50,10 +50,6 @@ body {
   background-color: var(--hover-color) !important;
 }
 
-#switch-mode:hover {
-  background-color: #191919 !important;
-}
-
 span:not([aria-hidden="true"]),
 title {
   color: var(--on-surface-color);
@@ -161,15 +157,6 @@ title {
 .repo-box:hover .repo-icon {
   top: 50%;
   opacity: 1;
-}
-
-/* Switch mode ----------------------------------------------- */
-#switch-mode {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  cursor: pointer;
-  font-size: 1.75rem;
 }
 
 /* Scrollbar --------------------------------------------- */
