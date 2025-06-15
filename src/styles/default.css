@@ -31,17 +31,6 @@ body {
   --xxl: 2.5rem;
 }
 
-.dark-mode.light {
-  --surface-color: #F5F5F5;
-  --on-surface-color: #000;
-  --hover-color: rgba(0, 0, 0, 0.1);
-
-  /* --hover-color: #E0E0E0; */
-
-  --accent-color: var(--primary-color);
-  background-color: var(--surface-color) !important;
-}
-
 /* Dark mode */
 .dark-mode {
   --surface-color: #090A0C;
@@ -63,10 +52,6 @@ body {
 
 #switch-mode:hover {
   background-color: #191919 !important;
-}
-
-#switch-mode.light:hover {
-  background-color: #DDD !important;
 }
 
 span:not([aria-hidden="true"]),
