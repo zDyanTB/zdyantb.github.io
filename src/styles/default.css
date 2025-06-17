@@ -1,5 +1,6 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
 
+
 @font-face {
   font-family: 'Geist';
   src: url('../assets/GeistVF.woff2') format('woff2'), url('../assets/GeistVF.woff') format('woff'), url('../assets/GeistVF.ttf') format('truetype');
@@ -85,7 +86,6 @@ a:hover .icon { color: white !important; }
   font-size: clamp(2rem, 10vmin, 8rem);
   font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
-  --stretch-multiplier: 5;
 
   display: flex;
   gap: 0.02ch;
@@ -93,33 +93,6 @@ a:hover .icon { color: white !important; }
   align-items: center;
 
   scroll-margin-top: 100px;
-}
-
-#projects {
-  --stretch: var(--stretch-multiplier);
-}
-
-.stretch-o {
-  height: 1.12ch;
-  width: calc(var(--stretch) * 1.16ch);
-  translate: 0 -0.01ch;
-  border: 0.25ch solid;
-  /* var(--white-color); */
-  border-radius: 1ch;
-  /* transition: width 0.55s; */
-  position: relative;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
 }
 
 .repo-img {
