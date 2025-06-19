@@ -26,25 +26,23 @@ import { Image } from 'astro:assets';
 ---
 
 <div class="section is-medium">
-  <div class="repo-box is-relative">
+  <div class="repo-box">
     <a class="repo-link" href={repo?.html_url}>
-      <Image inferSize={true} class="repo-img has-hard-shadow radius-xxl" src={bannerImg} alt={`${repo?.name} banner`} />
+      <Image inferSize={true} class="repo-img" src={bannerImg} alt={`${repo?.name} banner`} />
     </a>
-
-    <span class="icon accent-color repo-icon is-large">
-      <i class="fa-solid fa-link fa-2xl"></i>
-
-    </span>
   </div>
 
-  <div class="px-2 py-2 has-text-left radius-l">
+  <div class="has-text-left">
     <span class="title repo-title">{repo?.name}</span>
-    <div class="subtitle py-2">
-      <span class="icon accent-color"> <i class="fa-solid fa-star"></i> </span>
-      <span class="star-count">{repo?.stargazers_count}</span>
 
+    <div class="subtitle">
+      <span class="icon accent-color"> <i class="fa-solid fa-star"></i></span>
+      <span class="star-count">{repo?.stargazers_count}</span>
     </div>
 
     <span class="subtitle repo-desc">{repo?.description}</span>
   </div>
 </div>
+
+<style>
+</style>
