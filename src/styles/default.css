@@ -10,8 +10,9 @@ html {
   scroll-behavior: smooth !important;
 }
 
+html,
 body {
-  font-family: 'Geist', sans-serif !important;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 :root {
@@ -24,6 +25,7 @@ body {
   --white-high-opacity: rgba(255,255,255, 0.8);
 
   --hover-color: rgba(255, 255, 255, 0.1);
+  --accent-color: #CBEAA6;
 
   --xxs: .25rem;
   --xs: .5rem;
@@ -41,8 +43,12 @@ body {
 .radius-xl  { border-radius: 20px; }
 .radius-xxl { border-radius: 32px; }
 
-a .icon { color: var(--white-mid-opacity) !important; }
-a:hover .icon { color: white !important; }
+a .icon { color: var(--white-mid-opacity); }
+a:hover .icon { color: white; }
+
+.colorized {
+  color: var(--accent-color) !important;
+}
 
 
 /* Dark mode */
@@ -50,7 +56,6 @@ a:hover .icon { color: white !important; }
   --surface-color: #090A0C;
   --on-surface-color: #E5E5E5;
 
-  --accent-color: var(--tertiary-color);
 
   background-color: var(--surface-color) !important;
 }
@@ -77,14 +82,14 @@ a:hover .icon { color: white !important; }
 
 .is-card,
 .has-shadow {
-  box-shadow: rgba(0,0,0, 0.4) 0px 0px 15px;
+  box-shadow: var(--black-high-opacity) 0px 0px 15px;
 }
 
 /* Repositories ------------------------------------------------------------- */
 
 #projects {
   font-size: clamp(2rem, 10vmin, 8rem);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
 
   display: flex;
@@ -93,29 +98,6 @@ a:hover .icon { color: white !important; }
   align-items: center;
 
   scroll-margin-top: 100px;
-}
-
-.repo-img {
-  transition: all 0.2s ease;
-}
-
-.repo-link:hover .repo-img {
-  transform: scale(0.96);
-}
-
-.repo-box .repo-icon {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  font-size: 3em;
-  transition: all 0.2s ease;
-}
-
-.repo-box:hover .repo-icon {
-  top: 50%;
-  opacity: 1;
 }
 
 /* Scrollbar --------------------------------------------- */
