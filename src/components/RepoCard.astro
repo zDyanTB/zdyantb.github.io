@@ -26,23 +26,34 @@ import { Image } from 'astro:assets';
 ---
 
 <div class="section is-medium">
-  <div class="repo-box">
-    <a class="repo-link" href={repo?.html_url}>
-      <Image inferSize={true} class="repo-img" src={bannerImg} alt={`${repo?.name} banner`} />
-    </a>
-  </div>
+  <a class="repo-link" href={repo?.html_url}>
 
-  <div class="has-text-left">
-    <span class="title repo-title">{repo?.name}</span>
+    <div class="repo-box is-card columns radius-xxl p-2">
 
-    <div class="subtitle">
-      <span class="icon accent-color"> <i class="fa-solid fa-star"></i></span>
-      <span class="star-count">{repo?.stargazers_count}</span>
+      <figure class="image column is-narrow">
+        <Image inferSize={true} class="repo-img radius-xl" src={bannerImg} alt={`${repo?.name} banner`} />
+      </figure>
+
+
+      <div class="column has-text-left">
+        <span class="title repo-title">{repo?.name}</span><br>
+        <span class="subtitle repo-desc">{repo?.description}</span>
+
+        <div class="subtitle my-4">
+          <span class="icon colorized"> <i class="fa-solid fa-star"></i></span>
+          <span class="star-count colorized">{repo?.stargazers_count}</span>
+        </div>
+
+      </div>
+
     </div>
 
-    <span class="subtitle repo-desc">{repo?.description}</span>
-  </div>
+  </a>
 </div>
 
 <style>
+  .image {
+    width: 16rem;
+    height: auto;
+  }
 </style>
