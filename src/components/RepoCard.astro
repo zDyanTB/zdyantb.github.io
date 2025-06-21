@@ -28,14 +28,14 @@ import { Image } from 'astro:assets';
 <div class="section is-medium">
   <a class="repo-link" href={repo?.html_url}>
 
-    <div class="repo-box is-card columns radius-xxl p-2">
+    <div class="repo-box is-card columns is-mobile radius-xxl p-2">
 
       <figure class="image column is-narrow">
         <Image inferSize={true} class="repo-img radius-xl" src={bannerImg} alt={`${repo?.name} banner`} />
       </figure>
 
 
-      <div class="column has-text-left">
+      <div class="column">
         <span class="title repo-title">{repo?.name}</span><br>
         <span class="subtitle repo-desc">{repo?.description}</span>
 
@@ -53,7 +53,8 @@ import { Image } from 'astro:assets';
 
 <style>
   .image {
-    width: 16rem;
+    width: 100%;
+    max-width: 16rem;
     height: auto;
   }
 </style>
