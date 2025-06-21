@@ -16,11 +16,11 @@ body {
 }
 
 :root {
-  --black-low-opacity:   rgba(0,0,0, 0.2);
+  --black-low-opacity:   rgba(0,0,0, 0.4);
   --black-mid-opacity:   rgba(0,0,0, 0.6);
-  --black-high-opacity:  rgba(0,0,0,0.8);
+  --black-high-opacity:  rgba(0,0,0, 0.8);
 
-  --white-low-opacity:  rgba(255,255,255, 0.2);
+  --white-low-opacity:  rgba(255,255,255, 0.4);
   --white-mid-opacity:  rgba(255,255,255, 0.6);
   --white-high-opacity: rgba(255,255,255, 0.8);
 
@@ -72,17 +72,19 @@ a:hover .icon { color: white; }
 .is-card,
 .has-border {
   border: 1px solid var(--white-low-opacity);
+  overflow: hidden;
 }
 
 .is-card,
 .is-floating {
-  background-color: var(--black-mid-opacity);
-  backdrop-filter: blur(12px);
+  background-color: var(--black-low-opacity);
+  backdrop-filter: saturate(400%) blur(16px);
+  -webkit-backdrop-filter: saturate(400%) blur(16px);
 }
 
 .is-card,
 .has-shadow {
-  box-shadow: var(--black-high-opacity) 0px 0px 15px;
+  box-shadow: black 0px 0px 16px;
 }
 
 /* Repositories ------------------------------------------------------------- */
