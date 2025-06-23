@@ -13,7 +13,7 @@ const data = await fetchGithubUser(username);
     <!-- Profile -->
     <div class="section columns is-6 ">
 
-      <figure class="image column is-one-third">
+      <figure class="image column is-two-thirds">
         <Image inferSize={true} class="radius-xxl has-border has-shadow" id="avatar" src={data?.avatar_url ?? ''} alt={`${data?.name}'s profile`}>
       </figure>
 
@@ -58,9 +58,7 @@ const data = await fetchGithubUser(username);
 
 <style>
   .image {
-    min-width: 28rem;
-    width: 60%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
   }
   .colorized * {
