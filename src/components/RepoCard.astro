@@ -59,6 +59,17 @@ import { Image } from 'astro:assets';
     max-width: 16rem;
     height: auto;
   }
+  
+  @media (max-width: 768px) {
+    .repo-box {
+      display: block; 
+      margin: auto;
+    }
 
-
+    .image {
+        max-width: 100% !important;
+        min-width: auto;
+        width: 100%;
+    }
+  }
 </style>
