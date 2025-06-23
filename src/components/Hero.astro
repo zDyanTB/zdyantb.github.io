@@ -11,18 +11,63 @@ const data = await fetchGithubUser(username);
   <div class="hero-body">
 
     <!-- Profile -->
-    <div class="section columns is-6">
+    <div class="section columns is-6 ">
 
-      <div class="column is-two-thirds">
-        <figure class="image">
-          <Image inferSize={true} class="radius-xxl has-hard-shadow" id="avatar" src={data?.avatar_url ?? ''} alt={`${data?.name}'s profile`}>
-        </figure>
-      </div>
+      <figure class="image column is-one-third">
+        <Image inferSize={true} class="radius-xxl has-border has-shadow" id="avatar" src={data?.avatar_url ?? ''} alt={`${data?.name}'s profile`}>
+      </figure>
 
-      <div class="column my-4 mx-2">
-        <span class="title mb-2" id="account-name">{data?.name ?? 'N/A'}</span><br>
-        <span class="subtitle" id="bio">{data?.bio ?? 'No bio available'}</span>
+      <div class="column text-content my-4 is-flex is-flex-direction-column is-justify-content-space-between">
+        <section>
+          <div class="title is-1 colorized" id="account-name">Hey, it's {data?.name ?? 'N/A'}</div>
+          <span class="subtitle" id="bio">"{data?.bio ?? 'No bio available'}"</span>
+        </section>
+
+        <section>
+          <div class="subtitle is-3 py-6">
+            Studying software engineering in brazil
+          </div>
+        </section>
+        
+        <section class="contact colorized">
+
+          <div class="subtitle is-4"> Contact me </div>
+
+          <div class="subtitle has-text-left">
+            <a href="mailto:contact@zdyant.com" class="can-hover p-2 radius-xxl">
+              <span class="icon">
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+              <span>contact@zdyant.com</span>
+            </a>
+
+            <a href="#" class="can-hover p-2 radius-xxl">
+              <span class="icon">
+                <i class="fa-brands fa-discord"></i>
+              </span>
+              <span>zdyant</span>
+            </a>
+          </div>
+
+        </section>
       </div>
+      
     </div>
   </div>
 </section>
+
+<style>
+  .image {
+    min-width: 28rem;
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+  }
+  .colorized * {
+    color: var(--accent-color);
+  }
+  .contact {
+    white-space: nowrap;
+  }
+
+</style>
