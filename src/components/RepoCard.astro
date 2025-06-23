@@ -30,6 +30,7 @@ import { Image } from 'astro:assets';
 
     <div class="repo-box is-card columns is-mobile radius-xxl p-2">
 
+      <!-- Use or not use is-narrow?-->
       <figure class="image column is-narrow">
         <Image inferSize={true} class="repo-img radius-xl" src={bannerImg} alt={`${repo?.name} banner`} />
       </figure>
@@ -53,8 +54,11 @@ import { Image } from 'astro:assets';
 
 <style>
   .image {
+    min-width: 10rem;
     width: 100%;
     max-width: 16rem;
     height: auto;
   }
+
+
 </style>
